@@ -8,12 +8,22 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite o endereço do arquivo Excel:");
-        String enderecoExcel = sc.next();
-        CriarPlanilha cp = new CriarPlanilha(enderecoExcel);
-        cp.gerarPlanilha();
-        LerEscreverExcel teste = new LerEscreverExcel(cp.getEnderecoExcel());
-        teste.lerExcel();
-        teste.escreverExcel();
+        Bot bot1 = new Bot();
+
+        System.out.println("Digite a senha de acesso:");
+        String senha = sc.next();
+        String resp = "s";
+
+        if(senha.equals(bot1.getSenha())){
+            while(resp.equals("s")) {
+                bot1.botOpcoes();
+                int opcao = sc.nextInt();
+                bot1.executarBot(opcao);
+                resp = sc.next().toLowerCase();
+            }
+        }else{
+            System.out.println("Senha invalida!");
+        }
+
     }
 }

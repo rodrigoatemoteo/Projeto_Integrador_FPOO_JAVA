@@ -13,15 +13,36 @@ import java.io.IOException;
 
 public class LerEscreverExcel {
 
-    private String as1;
-    private String as2;
-    private String as3;
-    private String as4;
-    private String as5;
+    private String[] as1 = new String[3];
+    private String[] as2 = new String[3];
+    private String[] as3 = new String[3];
+    private String[] as4 = new String[3];
+    private String[] as5 = new String[3];
     private String enderecoExcel = "H:\\FPOO\saída.xls";
 
     public LerEscreverExcel(String excel){
         this.enderecoExcel = excel;
+    }
+
+    public String[] getAs1(){
+        System.out.println(this.as1);
+        return this.as1;
+    }
+
+    public String[] getAs2(){
+        return this.as2;
+    }
+
+    public String[] getAs3(){
+        return this.as3;
+    }
+
+    public String[] getAs4(){
+        return this.as4;
+    }
+
+    public String[] getAs5(){
+        return this.as5;
     }
 
     public void lerExcel() throws IOException, BiffException {
@@ -31,8 +52,6 @@ public class LerEscreverExcel {
         Sheet sheet = workbook.getSheet(0);
 
         int linhas = sheet.getRows();
-
-        System.out.println("Iniciando a leitura da planilha XLS:");
 
         for (int i = 0; i < linhas; i++) {
 
@@ -46,27 +65,15 @@ public class LerEscreverExcel {
 
             Cell a5 = sheet.getCell(4, i);
 
-            String as1 = a1.getContents();
+            this.as1[i] = a1.getContents();
 
-            String as2 = a2.getContents();
+            this.as2[i] = a2.getContents();
 
-            String as3 = a3.getContents();
+            this.as3[i] = a3.getContents();
 
-            String as4 = a4.getContents();
+            this.as4[i] = a4.getContents();
 
-            String as5 = a5.getContents();
-
-            System.out.println("Coluna 1: " + as1);
-
-            System.out.println("Coluna 2: " + as2);
-
-            System.out.println("Coluna 3: " + as3);
-
-            System.out.println("Coluna 4: " + as4);
-
-            System.out.println("Coluna 5: " + as5);
-
-            System.out.println("\n");
+            this.as5[i] = a5.getContents();
 
         }
 
@@ -124,10 +131,6 @@ public class LerEscreverExcel {
                         e.printStackTrace();
                     }
                 }
-
-
             }
-
         }
-
     }
