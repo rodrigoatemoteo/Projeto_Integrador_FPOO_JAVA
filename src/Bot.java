@@ -27,11 +27,15 @@ public class Bot {
     }
 
     public void botOpcoes() {
+        System.out.println("Oi, eu sou o "+this.nome);
+        System.out.println("Eu sou o "+this.descricao);
+        System.out.println("Aqui estão as opções aonde posso ajudar você");
         System.out.println("1 - Ver todos os usuarios cadastrados");
         System.out.println("2 - Ver todos os telefones cadastrados");
         System.out.println("3 - Ver todos os emails cadastrados");
         System.out.println("4 - Ver todas as datas de cadastro");
         System.out.println("5 - Ver todos os dados de um usuario cadastrado");
+        System.out.println("6 - Mostar senha");
         System.out.println("Digite a opcao desejada:");
     }
 
@@ -90,6 +94,8 @@ public class Bot {
                     System.out.println("Usuario não encontrado!");
                 }
                 break;
+            case 6:
+                System.out.println("A senha é "+this.senha);
             default:
                 System.out.println("Opcao invalida!");
                 break;

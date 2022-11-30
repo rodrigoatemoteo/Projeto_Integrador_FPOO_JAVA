@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws BiffException, IOException {
 
+        //#
+
         Scanner sc = new Scanner(System.in);
 
         Bot bot1 = new Bot();

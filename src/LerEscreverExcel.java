@@ -13,11 +13,13 @@ import java.io.IOException;
 
 public class LerEscreverExcel {
 
-    private String[] as1 = new String[3];
-    private String[] as2 = new String[3];
-    private String[] as3 = new String[3];
-    private String[] as4 = new String[3];
-    private String[] as5 = new String[3];
+    //#
+
+    private final String[] as1 = new String[3];
+    private final String[] as2 = new String[3];
+    private final String[] as3 = new String[3];
+    private final String[] as4 = new String[3];
+    private final String[] as5 = new String[3];
     private String enderecoExcel = "H:\\FPOO\saída.xls";
 
     public LerEscreverExcel(String excel){

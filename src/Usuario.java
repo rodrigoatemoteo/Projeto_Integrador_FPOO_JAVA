@@ -10,6 +10,9 @@ public class Usuario {
     private Date dataCadastro;
 
     public Usuario(String nome, String telefone, String email){
+
+        //#
+
         this.id = ""+gerarId();
         this.nome = nome;
         this.telefone = telefone;
