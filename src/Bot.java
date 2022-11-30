@@ -1,6 +1,7 @@
 import jxl.read.biff.BiffException;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Bot {
@@ -69,15 +70,19 @@ public class Bot {
                 boolean flag = false;
                 System.out.println("Digite o código do usuario:");
                 String codigo = sc.next();
-                System.out.println(teste.getAs1().length);
-                for (int x = 0; x <= teste.getAs1().length - 1; x++) {
-                    if(teste.getAs1()[x].equals(codigo)){
+                String[] codigos = teste.getAs1();
+                String[] nomes = teste.getAs2();
+                String[] telefones = teste.getAs3();
+                String[] emails = teste.getAs4();
+                String[] datas = teste.getAs5();
+                for (int x = 0; x <= Arrays.asList(codigo).size(); x++) {
+                    if(Arrays.asList(codigos).get(x).equals(codigo)){
                         System.out.println("Todos os dados de um usuario cadastrado");
-                        System.out.println("Código: "+teste.getAs1()[x]);
-                        System.out.println("Nome: "+teste.getAs2()[x]);
-                        System.out.println("Telefone: "+teste.getAs3()[x]);
-                        System.out.println("Email: "+teste.getAs4()[x]);
-                        System.out.println("Data de Cadastro: "+teste.getAs5()[x]);
+                        System.out.println("Código: "+ Arrays.asList(codigos).get(x));
+                        System.out.println("Nome: "+Arrays.asList(nomes).get(x));
+                        System.out.println("Telefone: "+Arrays.asList(telefones).get(x));
+                        System.out.println("Email: "+Arrays.asList(emails).get(x));
+                        System.out.println("Data de Cadastro: "+Arrays.asList(datas).get(x));
                         flag = true;
                     }
                 }
